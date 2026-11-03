@@ -895,3 +895,20 @@ a.c-item:hover .icon{background:var(--green);color:#fff}
   .post{padding:var(--s5)}
   .site-head.static .wrap{height:68px}
 }
+/* mobile leadership hierarchy: Minister > DG > Director */
+@media (max-width:600px){
+  .leaders{grid-template-columns:1fr;justify-items:center;gap:var(--s4)}
+  .leader.l1,.leader.l2,.leader.l3{flex-direction:column;grid-column:auto}
+  .leader.l1{width:100%}
+  .leader.l2{width:84%}
+  .leader.l3{width:68%}
+  .leader.l1 .ph{flex:none;aspect-ratio:1/1.02;min-height:0}
+  .leader.l2 .ph{flex:none;aspect-ratio:1/1;min-height:0}
+  .leader.l3 .ph{flex:none;aspect-ratio:1/.95;min-height:0}
+  .leader.l1 .tx,.leader.l2 .tx,.leader.l3 .tx{border-left:0;border-top:4px solid var(--green);padding:var(--s4) var(--s5);display:block}
+  .leader.l1 .tx{border-top-color:var(--forest)}
+  .leader.l1 b{font-size:1.45rem}
+  .leader.l2 b{font-size:1.2rem}
+  .leader.l3 b{font-size:1.02rem}
+  .leader.l3 .tx{padding:var(--s3) var(--s4)}
+}
