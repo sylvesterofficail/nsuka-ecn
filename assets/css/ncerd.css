@@ -912,3 +912,24 @@ a.c-item:hover .icon{background:var(--green);color:#fff}
   .leader.l3 b{font-size:1.02rem}
   .leader.l3 .tx{padding:var(--s3) var(--s4)}
 }
+/* DG card matches the Minister's design, one step smaller */
+.leader.l2 .tx{border-top-color:var(--forest)}
+.leader.l2 .rank{color:var(--gold-ink)}
+@media (max-width:900px){
+  .leaders{grid-template-columns:1fr;justify-items:center;gap:var(--s4);max-width:520px;margin:0 auto}
+  .leader.l1,.leader.l2,.leader.l3{flex-direction:column;grid-column:auto}
+  .leader.l1{width:100%}.leader.l2{width:84%}.leader.l3{width:68%}
+  .leader.l1 .ph{flex:none;aspect-ratio:1/1.02;min-height:0}
+  .leader.l2 .ph{flex:none;aspect-ratio:1/1.02;min-height:0}
+  .leader.l3 .ph{flex:none;aspect-ratio:1/.95;min-height:0}
+  .leader.l1 .tx,.leader.l2 .tx,.leader.l3 .tx{border-left:0;padding:var(--s4) var(--s5);display:block}
+  .leader.l1 .tx,.leader.l2 .tx{border-top:4px solid var(--forest)}
+  .leader.l3 .tx{border-top:4px solid var(--green);padding:var(--s3) var(--s4)}
+  .leader.l1 b{font-size:1.45rem}.leader.l2 b{font-size:1.25rem}.leader.l3 b{font-size:1.02rem}
+}
+@media (min-width:901px){
+  .leader.l3 .ph{aspect-ratio:1/.78}
+  .leader.l3 .tx{padding:var(--s4)}
+  .leader.l3 .cred{font-size:.68rem}
+  .leader.l3 span.role{font-size:var(--fs-12)}
+}
