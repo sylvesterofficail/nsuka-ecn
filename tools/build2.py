@@ -135,6 +135,7 @@ NETWORK=[
  ('NACHRED','National Centre for Hydropower Research and Development','University of Ilorin','Hydropower','droplet',False),
  ('NCEE','National Centre for Energy and Environment','University of Benin','Energy and environment','leaf',False),
  ('NCPRD','National Centre for Petroleum Research and Development','Abubakar Tafawa Balewa University, Bauchi','Petroleum','mountain',False),
+ ('BARECKS','Barefoot Renewable Energy College, Osara','Confluence University of Science and Technology (CUSTECH), Osara, Kogi State','Practical renewable energy training','cap',False),
 ]
 TIMELINE=[
  ('1979','Energy Commission Act','Act No. 62 creates the Energy Commission of Nigeria to coordinate the country\'s energy resources.',False),
@@ -255,7 +256,7 @@ home=f'''<section class="hero" aria-labelledby="hero-title" style="padding:0">
       <div class="stat hl">{ic('scroll')}<b data-count="1980">1980</b><span>Established by Act of the National Assembly</span></div>
       <div class="stat">{ic('layers')}<b data-count="9">9</b><span>Research units</span></div>
       <div class="stat">{ic('clipboard')}<b data-count="37">37</b><span>Published research projects</span></div>
-      <div class="stat green">{ic('network')}<b data-count="6">6</b><span>Energy Commission research centres nationwide</span></div>
+      <div class="stat green">{ic('calendar')}<b data-count="1982">1982</b><span>Full operation on the Nsukka campus</span></div>
     </div>
   </div>
 </section>
@@ -333,7 +334,7 @@ home=f'''<section class="hero" aria-labelledby="hero-title" style="padding:0">
 <section class="dark" aria-labelledby="net-title">
   <div class="wrap">
     <div class="head-row">
-      <div class="reveal"><span class="eyebrow">National network</span><h2 id="net-title">Energy Commission of Nigeria research centres</h2><p class="lede">The Energy Commission of Nigeria supervises six research centres, each hosted by a federal university and focused on one part of the energy sector.</p></div>
+      <div class="reveal"><span class="eyebrow">National network</span><h2 id="net-title">Energy Commission of Nigeria centres</h2><p class="lede">The Commission's research centres and institutions across Nigeria, each hosted by a university and focused on one part of the energy sector.</p></div>
       <a class="btn btn-glass reveal" href="https://energy.gov.ng" target="_blank" rel="noopener">Visit energy.gov.ng {ic('arrow-ur')}</a>
     </div>
     {network()}
@@ -356,7 +357,7 @@ FAC=[('flask','Laboratories','Analytical and testing work for every unit'),('the
      ('pot','National Stove Eligibility Laboratory','Cookstove performance testing'),('library','Library, seminar room and conference centre','Training, workshops and conferences')]
 RES=[('sun','Solar',1),('leaf','Biomass',1),('wind','Wind',1),('droplet','Hydro',1),('globe','Geothermal',1),('mountain','Coal',0),('zap','Petroleum',0),('gauge','Energy management',0),('leaf','Environment',0)]
 about=phero('About the Centre','One of Nigeria\'s earliest energy research centres, working on renewable and alternative energy on the Nsukka campus of the University of Nigeria since 1982.','About',
-            photo='assets/images/building-2000.webp',stats=[(1980,'Established by Act'),(1982,'Full operation'),(9,'Research units'),(6,'ECN centres')])
+            photo='assets/images/building-2000.webp',stats=[(1980,'Established by Act'),(1982,'Full operation'),(9,'Research units'),(37,'Projects')])
 about+=f'''
 <section aria-labelledby="who">
   <div class="wrap split">
@@ -404,7 +405,7 @@ about+=f'''
       <div class="fact"><b>Established in 1980, operating from 1982</b><p>An Act of the National Assembly established the Centre in 1980 along with three other research centres. It started full operation in 1982, funded directly by the Federal Government.</p><span class="src">Sources: energyresearch.unn.edu.ng; unn.edu.ng</span></div>
       <div class="fact"><b>Early research areas</b><p>In its early years the Centre was active in solar, biomass and coal energy utilisation, energy consumption and energy policy studies, working with UNN departments of mechanical and agricultural engineering, physics, statistics, economics and sociology.</p><span class="src">Source: unn.edu.ng</span></div>
       <div class="fact"><b>The first building</b><p>The Centre was first housed in a multi-purpose building with seven offices, a small laboratory, small mechanical and electrical workshops, a library, a seminar room and a conference centre, with a computerised solar collector test rig and an attached meteorological station.</p><span class="src">Source: unn.edu.ng</span></div>
-      <div class="fact"><b>Supervision by the Energy Commission</b><p>Decree No. 12 of 1988 and Decree No. 19 of 1989 gave the Energy Commission of Nigeria the legal mandate to supervise the research centres. The Commission now supervises six centres.</p><span class="src">Sources: energyresearch.unn.edu.ng; energy.gov.ng</span></div>
+      <div class="fact"><b>Supervision by the Energy Commission</b><p>Decree No. 12 of 1988 and Decree No. 19 of 1989 gave the Energy Commission of Nigeria the legal mandate to supervise the research centres. The Commission now oversees a national network of energy centres.</p><span class="src">Sources: energyresearch.unn.edu.ng; energy.gov.ng</span></div>
       <div class="fact"><b>Heads of the Centre</b><p>Heads named in published sources include Dr. C.N. Anyanwu (former Acting Director), Dr. P.E. Ugwuoke (Acting Director in the Centre's published directory) and the current Acting Director, Engr. Dr. Izuchukwu Francis Okafor.</p><span class="src">Sources: TEA-LP; energyresearch.unn.edu.ng; energy.gov.ng</span></div>
     </div>
   </div>
@@ -619,7 +620,7 @@ write('news-events.html','News and events'+SUFFIX,'Conferences, solar PV trainin
 G=[
  ('network','Supervising body and network','The Energy Commission of Nigeria and its research centres.',[
    ('Energy Commission of Nigeria','The Centre\'s supervising body','https://energy.gov.ng','energy.gov.ng'),
-   ('ECN research centres','The six centres and their areas of research','https://energy.gov.ng/research_centers.php','energy.gov.ng'),
+   ('ECN research centres','The Commission\'s centres and their areas of research','https://energy.gov.ng/research_centers.php','energy.gov.ng'),
    ('ECN leadership','The Commission\'s management and centre directors','https://energy.gov.ng/team.html','energy.gov.ng'),
    ('Hydropower research centre','National Centre for Hydropower Research and Development, Ilorin','https://nachred.unilorin.edu.ng','unilorin.edu.ng')]),
  ('cap','University of Nigeria','Our host university\'s services.',[
