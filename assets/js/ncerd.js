@@ -99,7 +99,7 @@
     var draw=function(){
       var now=new Date(),dd=dayOf(now),base=Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate());
       var W=sky.clientWidth||1200,H=sky.clientHeight||800,small=W<760;
-      var h1=d.querySelector('.hero h1'),hr=h1?h1.getBoundingClientRect().right-sky.getBoundingClientRect().left:W*.5,x0=small?W*.06:Math.min(W*.62,Math.max(W*.5,hr+40)),x1=W*(small?.94:.97),HZ=H*(small?.34:.47),top=H*(small?.13:.13);
+      var h1=d.querySelector('.hero h1'),hr=h1?h1.getBoundingClientRect().right-sky.getBoundingClientRect().left:W*.5,x0=small?W*.08:Math.min(W*.62,Math.max(W*.5,hr+40)),x1=W*(small?.92:.97),HZ=small?178:H*.47,top=small?34:H*.13;
       sky.setAttribute('viewBox','0 0 '+W+' '+H);
       var pt=function(min){var e=elev(new Date(base+min*6e4));return [x0+(min-dd.rise)/(dd.set-dd.rise)*(x1-x0),HZ-Math.max(e,0)/90*(HZ-top)];};
       var nowMin=now.getUTCHours()*60+now.getUTCMinutes()+now.getUTCSeconds()/60, up=nowMin>dd.rise&&nowMin<dd.set;
@@ -111,7 +111,7 @@
       sky.appendChild(defs);
       sky.appendChild(mk('line',{x1:x0-30,x2:x1+30,y1:HZ,y2:HZ,'class':'horizon'}));
       sky.appendChild(mk('path',{d:full,'class':'arc'}));
-      var done=mk('path',{'class':'arc-done'}), glow=mk('circle',{r:small?60:110,'class':'glow halo'}), sun=mk('circle',{r:small?9:12,'class':'sun'});
+      var done=mk('path',{'class':'arc-done'}), glow=mk('circle',{r:small?46:110,'class':'glow halo'}), sun=mk('circle',{r:small?9:12,'class':'sun'});
       sky.appendChild(done); if(up){sky.appendChild(glow);sky.appendChild(sun);}
       if(!small){
         var a=mk('text',{x:x0,y:HZ-12,'class':'tick'});a.textContent='Sunrise '+fmt(dd.rise);sky.appendChild(a);

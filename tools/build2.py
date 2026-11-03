@@ -224,7 +224,6 @@ home=f'''<section class="hero" aria-labelledby="hero-title" style="padding:0">
   <div class="hero-main">
     <div class="wrap hero-grid">
       <div>
-        <span class="badge"><b>Est. 1980</b>National Centre for Energy Research and Development, UNN</span>
         <h1 id="hero-title"><span class="line"><span>Energy research</span></span><span class="line"><span>and development</span></span><span class="line"><span class="gold">for Nigeria.</span></span></h1>
         <p class="sub">A research centre of the Energy Commission of Nigeria at the University of Nigeria, Nsukka, working on renewable and alternative energy since 1982.</p>
         <div class="btns">
