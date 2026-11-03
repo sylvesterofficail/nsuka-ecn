@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3a24"/><stop offset="1" stop-color="#03190f"/></linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".2" r=".6"><stop offset="0" stop-color="#00692f" stop-opacity=".55"/><stop offset="1" stop-color="#00692f" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#ffffff" stroke-opacity=".045"/></pattern>
+</defs>
+<rect width="600" height="450" fill="url(#bg)"/><rect width="600" height="450" fill="url(#glow)"/><rect width="600" height="450" fill="url(#grid)"/>
+<g fill="none" stroke="#8fd3a8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+
+<g transform="translate(410 150)"><path d="M-6 0 L-14 270 H14 L6 0 Z" fill="#0e5a33"/>
+<circle r="14" fill="#8fd3a8"/>
+<path d="M0 -12 C10 -60 14 -100 4 -130 C-8 -100 -10 -60 0 -12 Z" fill="#0e5a33"/>
+<path d="M0 -12 C10 -60 14 -100 4 -130 C-8 -100 -10 -60 0 -12 Z" fill="#0e5a33" transform="rotate(120)"/>
+<path d="M0 -12 C10 -60 14 -100 4 -130 C-8 -100 -10 -60 0 -12 Z" fill="#0e5a33" transform="rotate(240)"/></g>
+<g transform="translate(160 250)"><path d="M0 0 V170"/><path d="M-60 0 H60"/>
+<circle cx="-60" cy="-8" r="14" fill="#0e5a33"/><circle cx="60" cy="-8" r="14" fill="#0e5a33"/><circle cx="0" cy="-8" r="6" fill="#8fd3a8"/>
+<path d="M-20 60 H20 V100 H-20 Z" fill="#0e5a33"/></g>
+<path d="M60 120 H210 M90 150 H260 M40 180 H170" stroke-opacity=".5"/>
+<path d="M30 420 H570" stroke-opacity=".4"/>
+</g></svg>

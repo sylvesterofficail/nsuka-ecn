@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3a24"/><stop offset="1" stop-color="#03190f"/></linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".2" r=".6"><stop offset="0" stop-color="#00692f" stop-opacity=".55"/><stop offset="1" stop-color="#00692f" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#ffffff" stroke-opacity=".045"/></pattern>
+</defs>
+<rect width="600" height="450" fill="url(#bg)"/><rect width="600" height="450" fill="url(#glow)"/><rect width="600" height="450" fill="url(#grid)"/>
+<g fill="none" stroke="#8fd3a8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="110" cy="90" r="26" fill="#0e5a33"/><path d="M110 54 v-14" transform="rotate(0 110 90)"/><path d="M110 54 v-14" transform="rotate(45 110 90)"/><path d="M110 54 v-14" transform="rotate(90 110 90)"/><path d="M110 54 v-14" transform="rotate(135 110 90)"/><path d="M110 54 v-14" transform="rotate(180 110 90)"/><path d="M110 54 v-14" transform="rotate(225 110 90)"/><path d="M110 54 v-14" transform="rotate(270 110 90)"/><path d="M110 54 v-14" transform="rotate(315 110 90)"/>
+<path d="M150 360 L300 250 L560 250 L560 360 Z" fill="#0e5a33" fill-opacity=".35"/>
+<path d="M300 250 L560 250"/>
+<g transform="translate(330 140)">
+  <path d="M0 110 L60 0 L210 0 L150 110 Z" fill="#0e5a33"/>
+  <path d="M15 82 L165 82 M30 55 L180 55 M45 28 L195 28"/>
+  <path d="M40 110 L100 0 M80 110 L140 0 M120 110 L180 0" stroke-opacity=".5"/>
+  <rect x="70" y="-46" width="150" height="38" rx="19" fill="#0e5a33"/>
+  <path d="M82 -27 h126" stroke-opacity=".5"/>
+  <path d="M150 110 v40 M10 110 v40"/>
+</g>
+<path d="M60 380 H560" stroke-opacity=".4"/>
+</g></svg>

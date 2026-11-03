@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3a24"/><stop offset="1" stop-color="#03190f"/></linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".2" r=".6"><stop offset="0" stop-color="#00692f" stop-opacity=".55"/><stop offset="1" stop-color="#00692f" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#ffffff" stroke-opacity=".045"/></pattern>
+</defs>
+<rect width="600" height="450" fill="url(#bg)"/><rect width="600" height="450" fill="url(#glow)"/><rect width="600" height="450" fill="url(#grid)"/>
+<g fill="none" stroke="#8fd3a8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M510.0 150.0 L509.2 161.7 L489.5 168.6 L486.5 177.6 L497.9 195.0 L491.4 204.8 L470.9 200.9 L463.8 207.1 L465.0 227.9 L454.4 233.1 L438.6 219.5 L429.4 221.4 L420.0 240.0 L408.3 239.2 L401.4 219.5 L392.4 216.5 L375.0 227.9 L365.2 221.4 L369.1 200.9 L362.9 193.8 L342.1 195.0 L336.9 184.4 L350.5 168.6 L348.6 159.4 L330.0 150.0 L330.8 138.3 L350.5 131.4 L353.5 122.4 L342.1 105.0 L348.6 95.2 L369.1 99.1 L376.2 92.9 L375.0 72.1 L385.6 66.9 L401.4 80.5 L410.6 78.6 L420.0 60.0 L431.7 60.8 L438.6 80.5 L447.6 83.5 L465.0 72.1 L474.8 78.6 L470.9 99.1 L477.1 106.2 L497.9 105.0 L503.1 115.6 L489.5 131.4 L491.4 140.6 Z" fill="#0e5a33"/><circle cx="420" cy="150" r="29"/><path d="M345.0 240.0 L344.2 249.6 L331.3 255.0 L328.1 262.0 L332.1 275.4 L325.4 282.1 L312.0 278.1 L305.0 281.3 L299.6 294.2 L290.0 295.0 L282.4 283.3 L275.0 281.3 L262.5 287.6 L254.6 282.1 L256.3 268.3 L251.9 262.0 L238.3 258.8 L235.8 249.6 L246.0 240.0 L246.7 232.4 L238.3 221.2 L242.4 212.5 L256.3 211.7 L261.7 206.3 L262.5 192.4 L271.2 188.3 L282.4 196.7 L290.0 196.0 L299.6 185.8 L308.8 188.3 L312.0 201.9 L318.3 206.3 L332.1 204.6 L337.6 212.5 L331.3 225.0 L333.3 232.4 Z" fill="#0e5a33"/><circle cx="290" cy="240" r="18"/>
+<path d="M60 330 H560 M90 330 V410 M530 330 V410" stroke-width="3"/>
+<rect x="60" y="310" width="500" height="20" rx="4" fill="#0e5a33"/>
+<g transform="translate(140 220) rotate(-35)"><path d="M0 0 h120" stroke-width="12" stroke="#0e5a33"/><path d="M0 0 h120" /><path d="M120 -18 a18 18 0 1 1 0 36 l-10 -10 v-16 z" fill="#0e5a33"/></g>
+</g></svg>
