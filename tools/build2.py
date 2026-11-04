@@ -197,7 +197,6 @@ def portrait(cls=''):
 LEADERS=[
  ('l1','minister.jpg','KU','Supervising Minister','Dr. Kingsley Tochukwu Udeh, SAN','','Minister of Innovation, Science and Technology'),
  ('l2','dg-ecn.jpg','MA','Energy Commission of Nigeria','Dr. Mustapha Abdullahi','PhD (Mech. Engrg), MIMechE','DG/CEO, Energy Commission of Nigeria'),
- ('l3','director-ncerd.jpg','IO','The Centre','Engr. Dr. Izuchukwu Francis Okafor','Ph.D.; M.Eng. (Mechanical Engineering); B.Eng. (Mechanical Engineering); SESN; MWEC-NNC; CMNSE; ASME; R.Engr., COREN','Ag. Director, National Centre for Energy Research and Development (NCERD), University of Nigeria, Nsukka'),
 ]
 def leaders():
     out='<div class="leaders" data-stagger>'
