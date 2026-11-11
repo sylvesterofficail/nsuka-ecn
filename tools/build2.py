@@ -3,7 +3,7 @@
 import os, html
 from icons import ic
 OUT = os.path.join(os.path.dirname(__file__), '..')
-NAV = [('index.html','Home'),('about.html','About'),('projects.html','Projects'),
+NAV = [('index.html','Home'),('about.html','About'),('research.html','Research'),('projects.html','Projects'),
        ('staff-profiles.html','Staff'),('news-events.html','News'),('external-resources.html','Resources')]
 SUFFIX = ' | NCERD, University of Nigeria, Nsukka'
 
@@ -67,7 +67,7 @@ def foot():
       <div>
         <h2>Contact</h2>
         <ul>
-          <li class="ci">{ic('phone')}<span><a href="tel:+2348065702570">+234 806 570 2570</a><br><a href="tel:+2348082770823">+234 808 277 0823</a></span></li>
+          <li class="ci">{ic('phone')}<span><a href="tel:+2348065702570">+234 806 570 2570</a><br><a href="tel:+2348082770823">+234 808 277 0823</a><br><a href="tel:+2348076251137">+234 807 625 1137</a></span></li>
           <li class="ci">{ic('mail')}<a href="mailto:ncerdunn@yahoo.com">ncerdunn@yahoo.com</a></li>
           <li class="ci">{ic('globe')}<a href="https://www.ncerd-unn.gov.ng" target="_blank" rel="noopener">www.ncerd-unn.gov.ng</a></li>
           <li class="ci">{ic('pin')}<span>University of Nigeria, Nsukka, Enugu State</span></li>
@@ -108,16 +108,29 @@ def write(name, title, desc, body):
 
 # ---------------- data ----------------
 UNITS=[
- ('Solar Thermal','sun','Solar water and air heaters, crop dryers, concentrators and solar refrigeration.','Engr. O.N. Okala'),
- ('Biomass and Biogas','flame','Anaerobic digestion, biofuels, pyrolysis and conversion of agricultural and municipal waste.','Dr. (Mrs.) N.F. Oparaku'),
- ('Photovoltaics','panel','Design, testing and evaluation of PV systems, solar cells and thin films.','Mrs. C.A. Nwanya'),
- ('Energy Management and Environment','gauge','Energy audits, efficiency programmes and cookstove testing at the National Stove Eligibility Laboratory.','Engr. I.F. Okafor'),
- ('Wind and Meteorology','wind','Wind resource measurement and the weather data that underpin system design.','Dr. P.E. Ugwuoke'),
- ('Fossil Energy','mountain','Coal and solid fuel studies, including smokeless briquettes and efficient stoves.','Dr. I.S. Eze'),
- ('Energy Information and Manpower Development','book','Energy data, training programmes and short courses for technicians and graduates.','Dr. C.N. Anyanwu'),
- ('Design and Production Workshops','wrench','Fabrication of prototypes and devices produced on demand.','Mr. Ik Owoh'),
- ('Laboratories','flask','Analytical and test facilities serving every research unit.','Mr. A. Ofomatah'),
+ ('Solar Photovoltaic','panel','Testing PV components and systems against international standards, solar cell research, PV installations and installer training.','Mrs. C.A. Nwanya','pv'),
+ ('Biomass and Biogas','flame','Family and commercial bio-digesters running on animal dung, farm waste and brewery effluent, and efficient biogas burners.','Dr. (Mrs.) N.F. Oparaku','biomass'),
+ ('Solar Thermal Energy','sun','Solar dryers, water heaters from 100 to over 500 litres, solar cookers, chicken brooders and incubators.','Engr. O.N. Okala','solar-thermal'),
+ ('Energy Management and Environment','gauge','Energy efficiency, management of energy resources and environmentally friendly energy production and use.','Engr. I.F. Okafor','energy-mgmt'),
+ ('Wind and Meteorology','wind','A wind data bank and an on-site weather station recording wind speed, direction and weather conditions.','Dr. P.E. Ugwuoke','wind'),
+ ('Fossil Energy','mountain','Coal briquetting: turning Nigeria\'s friable coal into compact, smokeless fuel for domestic use.','Dr. I.S. Eze','fossil'),
+ ('Energy Information and Manpower Development','book','Research dissemination, skills-gap analysis and training workshops on renewable energy and efficiency.','Dr. C.N. Anyanwu','information'),
+ ('Research Library and Information','library','A special library of books, journals, proceedings and periodicals on renewable and alternative energy.','','library'),
 ]
+LABS=[
+ ('aas','Atomic Absorption Spectrophotometer','Metal analyses'),
+ ('bomb-calorimeter','Oxygen Bomb Calorimeter','Calorific value determination'),
+ ('ftir','Fourier Transform Infra-Red Spectrophotometer','Characterisation of samples'),
+ ('particle-size-analyser','Particle Size Analyser','Determination of particle sizes'),
+ ('tga','Thermo-gravimetric Analyser (TGA)','Study of compounds during heating'),
+ ('muffle-furnace','Muffle Furnace','Ashing and carbonisation'),
+ ('emissions-monitoring','Laboratory Emissions Monitoring System','Measuring PM, CO and CO₂ from domestic biomass cookstoves'),
+ ('pv-cell-tester','Solar PV Cell Tester','Testing solar cells'),
+ ('weather-station','Weather Station','Recording wind speed, wind direction and weather conditions'),
+ ('briquetting-machine','Coal Briquetting Machine','0.5 tonnes per day capacity'),
+]
+def lab_fig(f,t,d,lazy=True):
+    return f'<figure class="lab"><div class="lab-ph"><img src="assets/images/labs/{f}.webp" alt="{t} at NCERD" loading="lazy"></div><figcaption><b>{t}</b><span>{d}</span></figcaption></figure>'
 TECH=[
  ('Solar rice dryer','sun','Solar thermal','A commercial-scale solar rice dryer designed, constructed and installed by the Centre for a rice production company.','2 tonnes','capacity'),
  ('Thermosyphon solar water heater','droplet','Solar thermal','A solar water heater that circulates water naturally, without a pump.','70–80 °C','hot water supply'),
@@ -142,6 +155,8 @@ TIMELINE=[
  ('1980','Centre established','An Act of the National Assembly establishes the Centre at Nsukka, alongside three other research centres.',True),
  ('1982','Full operation','The Centre begins full work on the Nsukka campus, funded directly by the Federal Government.',True),
  ('1988','Under the Commission','Decree No. 12 of 1988, and Decree No. 19 of 1989, charge the Energy Commission with supervising the centres.',False),
+ ('1994','Biogas programme begins','Two members of staff train in biogas technology in China, starting the Centre\'s work on bio-digesters.',False),
+ ('2005','Wind data bank','A one-year wind data bank (2005–2006) is built with a CR10X data logger, measuring wind at 9 metres.',False),
  ('2020','4th conference','NCERD hosts the 4th International Conference and Training Workshop with GIZ, alongside solar PV training.',False),
  ('2022','5th conference','The 5th edition is held at the Centre, physically and virtually, on post-COVID-19 energy solutions.',False),
  ('2024','6th edition','A new call for papers opens with a 20-day practical solar PV training workshop.',True),
@@ -163,12 +178,11 @@ def timeline():
 
 def bento(with_heads=False):
     out='<div class="bento" data-stagger>'
-    for k,(n,i,dsc,h) in enumerate(UNITS):
+    for k,(n,i,dsc,h,artf) in enumerate(UNITS):
         cls='tile big' if k==0 else ('tile green' if k==1 else ('tile wide' if k==2 else 'tile'))
         cls+=' art'
-        artf={'Solar Thermal':'solar-thermal','Biomass and Biogas':'biomass','Photovoltaics':'pv','Energy Management and Environment':'energy-mgmt','Wind and Meteorology':'wind','Fossil Energy':'fossil','Energy Information and Manpower Development':'information','Design and Production Workshops':'workshop','Laboratories':'labs'}[n]
         rings='<svg class="rings" viewBox="0 0 340 340" aria-hidden="true"><circle cx="170" cy="170" r="60"/><circle cx="170" cy="170" r="100"/><circle cx="170" cy="170" r="140"/><circle cx="170" cy="170" r="168"/></svg>' if k==0 else ''
-        lead=f'<div class="lead">Unit head: {h}</div>' if with_heads else ''
+        lead=f'<div class="lead">Unit head: {h}</div>' if (with_heads and h) else ''
         out+=f'<article class="{cls}" style="background-image:url(assets/images/units/{artf}.svg)"><h3>{n}</h3><p>{dsc}</p>{lead}</article>'
     return out+'</div>'
 
@@ -176,7 +190,7 @@ def contact_strip():
     return f'''<div class="contact-strip">
       <div class="c-list" data-stagger>
         <a class="c-item" href="tel:+2348065702570"><span class="icon">{ic('phone')}</span><span><small>Call the Centre</small><b>+234 806 570 2570</b></span></a>
-        <a class="c-item" href="tel:+2348082770823"><span class="icon">{ic('phone')}</span><span><small>Alternative line</small><b>+234 808 277 0823</b></span></a>
+        <a class="c-item" href="tel:+2348082770823"><span class="icon">{ic('phone')}</span><span><small>Alternative lines</small><b>+234 808 277 0823</b><b>+234 807 625 1137</b></span></a>
         <a class="c-item" href="mailto:ncerdunn@yahoo.com"><span class="icon">{ic('mail')}</span><span><small>Email</small><b>ncerdunn@yahoo.com</b></span></a>
         <a class="c-item" href="https://www.ncerd-unn.gov.ng" target="_blank" rel="noopener"><span class="icon">{ic('globe')}</span><span><small>Website</small><b>www.ncerd-unn.gov.ng</b></span></a>
         <div class="c-item"><span class="icon">{ic('pin')}</span><span><small>Visit</small><b>University of Nigeria, Nsukka Campus, Enugu State</b></span></div>
@@ -253,7 +267,7 @@ home=f'''<section class="hero" aria-labelledby="hero-title" style="padding:0">
     </div>
     <div class="stat-grid" data-stagger>
       <div class="stat hl">{ic('scroll')}<b data-count="1980">1980</b><span>Established by Act of the National Assembly</span></div>
-      <div class="stat">{ic('layers')}<b data-count="9">9</b><span>Research units</span></div>
+      <div class="stat">{ic('layers')}<b data-count="8">8</b><span>Research units</span></div>
       <div class="stat">{ic('clipboard')}<b data-count="37">37</b><span>Published research projects</span></div>
       <div class="stat green">{ic('calendar')}<b data-count="1982">1982</b><span>Full operation on the Nsukka campus</span></div>
     </div>
@@ -263,10 +277,20 @@ home=f'''<section class="hero" aria-labelledby="hero-title" style="padding:0">
 <section class="mist" id="units" aria-labelledby="units-title">
   <div class="wrap">
     <div class="head-row">
-      <div class="reveal"><span class="eyebrow">Research units</span><h2 id="units-title">Research units</h2><p class="lede">The units listed in the Centre's published staff directory.</p></div>
-      <a class="btn btn-ghost reveal" href="staff-profiles.html">Meet the unit heads {ic('arrow')}</a>
+      <div class="reveal"><span class="eyebrow">Research units</span><h2 id="units-title">Research units</h2><p class="lede">Eight research units cover solar, biomass, wind, fossil energy, energy management and the information and training that support them.</p></div>
+      <a class="btn btn-ghost reveal" href="research.html">Units and laboratories {ic('arrow')}</a>
     </div>
     {bento()}
+  </div>
+</section>
+
+<section aria-labelledby="labs-title">
+  <div class="wrap">
+    <div class="head-row">
+      <div class="reveal"><span class="eyebrow">Facilities</span><h2 id="labs-title">Inside our laboratories</h2><p class="lede">Analytical, testing and fabrication equipment that supports every research unit.</p></div>
+      <a class="btn btn-ghost reveal" href="research.html#facilities">All facilities {ic('arrow')}</a>
+    </div>
+    <div class="labs-grid four" data-stagger>{''.join(lab_fig(*l) for l in LABS[:4])}</div>
   </div>
 </section>
 
@@ -297,6 +321,12 @@ home=f'''<section class="hero" aria-labelledby="hero-title" style="padding:0">
       <figure><img src="assets/images/building-1100.webp" alt="The NCERD building on the Nsukka campus, with a solar street light in front" loading="lazy"><figcaption>The NCERD building, University of Nigeria, Nsukka campus</figcaption></figure>
       <figure><img src="assets/images/commissioning.webp" alt="Officials and staff at a ribbon-cutting ceremony at the Centre" loading="lazy"><figcaption>A commissioning ceremony at the Centre</figcaption></figure>
       <figure><img src="assets/images/inverter-room.webp" alt="Officials inspecting a solar inverter and battery bank installation" loading="lazy"><figcaption>Solar inverter and battery bank installation</figcaption></figure>
+      <figure><img src="assets/images/building-front.webp" alt="Front view of the NCERD building with a solar streetlight" loading="lazy"><figcaption>The NCERD building, front view</figcaption></figure>
+    </div>
+    <div class="hosts reveal">
+      <div class="host"><img src="assets/images/logos/ncerd-logo.png" alt="NCERD logo" loading="lazy"><span><b>NCERD</b>National Centre for Energy Research and Development</span></div>
+      <div class="host"><img src="assets/images/logos/unn-logo.png" alt="University of Nigeria crest" loading="lazy"><span><b>Host institution</b>University of Nigeria, Nsukka</span></div>
+      <div class="host"><img src="assets/images/ecn-logo.png" alt="Energy Commission of Nigeria emblem" loading="lazy"><span><b>Supervising body</b>Energy Commission of Nigeria</span></div>
     </div>
   </div>
 </section>
@@ -356,7 +386,7 @@ FAC=[('flask','Laboratories','Analytical and testing work for every unit'),('the
      ('pot','National Stove Eligibility Laboratory','Cookstove performance testing'),('library','Library, seminar room and conference centre','Training, workshops and conferences')]
 RES=[('sun','Solar',1),('leaf','Biomass',1),('wind','Wind',1),('droplet','Hydro',1),('globe','Geothermal',1),('mountain','Coal',0),('zap','Petroleum',0),('gauge','Energy management',0),('leaf','Environment',0)]
 about=phero('About the Centre','One of Nigeria\'s earliest energy research centres, working on renewable and alternative energy on the Nsukka campus of the University of Nigeria since 1982.','About',
-            photo='assets/images/building-2000.webp',stats=[(1980,'Established by Act'),(1982,'Full operation'),(9,'Research units'),(37,'Projects')])
+            photo='assets/images/building-2000.webp',stats=[(1980,'Established by Act'),(1982,'Full operation'),(8,'Research units'),(37,'Projects')])
 about+=f'''
 <section aria-labelledby="who">
   <div class="wrap split">
@@ -380,8 +410,8 @@ about+=f'''
     <div class="head-row"><div class="reveal"><span class="eyebrow">Purpose</span><h2 id="vm">Vision, mission and mandate</h2></div></div>
     <div class="vmm" data-stagger>
       <article class="vcard"><div class="icon">{ic('eye')}</div><h3>Vision</h3><p>A functional, globally comparable and competitive centre for research and development in renewable and alternative energy technologies, responsive to the energy and economic needs of Nigeria and beyond.</p></article>
-      <article class="vcard mid"><div class="icon">{ic('target')}</div><h3>Mission</h3><p>To keep the Centre at the forefront of research and development, innovation and knowledge transfer in renewable and alternative energy, energy management and the environment, in support of the Sustainable Development Goals.</p></article>
-      <article class="vcard"><div class="icon">{ic('scroll')}</div><h3>Mandate</h3><p>Research, development, dissemination and manpower training across renewable and non-renewable energy, with short courses, diplomas and degree programmes run with UNN departments.</p></article>
+      <article class="vcard mid"><div class="icon">{ic('target')}</div><h3>Mission</h3><p>To place the Centre in the forefront of research and development, innovation in knowledge transfer in the areas of renewable and alternative energy technologies, energy management and environment for sustainable development of the nation.</p></article>
+      <article class="vcard"><div class="icon">{ic('scroll')}</div><h3>Mandate</h3><p>Research, development, dissemination, commercialisation and manpower training in renewable and non-renewable energy: solar, biomass, biofuels, wind, hydro, geothermal, fossil fuels, energy management and environment. The Centre also mounts short courses, diploma and degree programmes in renewable energy technologies with UNN departments and other institutions.</p></article>
     </div>
   </div>
 </section>
@@ -400,6 +430,7 @@ about+=f'''
   <div class="wrap">
     <div class="head-row"><div class="reveal"><span class="eyebrow">Our story</span><h2 id="story-title">How the Centre began and grew</h2></div></div>
     <div class="facts-list" data-stagger>
+      <div class="fact"><b>Why the Centre was created</b><p>The world energy crisis of the 1970s showed the need to harness energy sources beyond fossil fuels. Although Nigeria has abundant fossil fuel reserves, growing demand in homes, commerce and industry meant the country could not rely on them alone. In 1980 the Federal Government established NCERD, among other energy research centres, to develop the country's abundant solar and alternative energy sources.</p><span class="src">Source: NCERD UNN information document</span></div>
       <div class="fact"><b>Our home: the University of Nigeria</b><p>The University was founded by Dr. Nnamdi Azikiwe in 1955 and formally opened on 7 October 1960, as the first land-grant university in Africa. Its Nsukka campus covers 871 hectares of hilly savannah, about 80 km north of Enugu.</p><span class="src">Source: NCERD conference venue page, ncerd.com.ng</span></div>
       <div class="fact"><b>Established in 1980, operating from 1982</b><p>An Act of the National Assembly established the Centre in 1980 along with three other research centres. It started full operation in 1982, funded directly by the Federal Government.</p><span class="src">Sources: energyresearch.unn.edu.ng; unn.edu.ng</span></div>
       <div class="fact"><b>Early research areas</b><p>In its early years the Centre was active in solar, biomass and coal energy utilisation, energy consumption and energy policy studies, working with UNN departments of mechanical and agricultural engineering, physics, statistics, economics and sociology.</p><span class="src">Source: unn.edu.ng</span></div>
@@ -425,6 +456,7 @@ about+=f'''
   <div class="wrap">
     <div class="head-row"><div class="reveal"><span class="eyebrow">Facilities</span><h2 id="fac">Research, fabrication and training under one roof</h2></div></div>
     <div class="fac" data-stagger>{''.join(f'<div class="fac-item"><span class="icon">{ic(i)}</span><span><b>{t}</b><span>{dsc}</span></span></div>' for i,t,dsc in FAC)}</div>
+    <p style="margin-top:24px"><a class="link-arrow" href="research.html#facilities">See the laboratory equipment {ic('arrow')}</a></p>
   </div>
 </section>
 
@@ -447,6 +479,77 @@ about+=f'''
 write('about.html','About the Centre'+SUFFIX,'History, vision, mission, mandate and facilities of the National Centre for Energy Research and Development, University of Nigeria, Nsukka.',about)
 
 # =================================================== PROJECTS
+
+UNIT_DETAIL=[
+ ('Solar Photovoltaic','pv','panel',
+  ['Solar cells convert sunlight into electricity. Linked into modules and arrays, they power lighting, water pumping, communications (repeater and GSM stations, TV and radio), audio-visual aids and computers in schools, cathodic protection, battery charging, vaccine refrigeration and telemetry.',
+   'The Centre has facilities for monitoring the performance of PV components and systems, to make sure they meet international standards and perform well in the local environment. Alongside research on solar cell fabrication and performance, NCERD installs solar electricity systems for commercial and domestic users and runs intensive training on PV installation and maintenance for youth empowerment.'],
+  [('pv-cell-tester','Solar PV Cell Tester','Testing solar cells')]),
+ ('Biomass and Biogas','biomass','flame',
+  ['Biogas work at the Centre began in 1994, when two members of staff went to China for a three-month training course in biogas technology. The Centre now designs and fabricates family-size and commercial bio-digesters.',
+   'Digesters of various capacities, running on animal dung, farm waste and brewery effluent, have been developed and installed, and have proved efficient at producing cooking gas for private and public users. The Centre has also built efficient biogas burners, and is moving on to using biogas for electricity generation and as an alternative to petrol and diesel in engines. Slurry from the digesters has been used as fertiliser for crops.'],[]),
+ ('Solar Thermal Energy','solar-thermal','sun',
+  ['Solar thermal technology turns sunlight into heat for industry, homes and businesses. The unit has developed prototype solar food dryers and solar manure dryers, to improve the handling, storage and use of agricultural produce.',
+   'It has developed solar water heaters from 100 litres to over 500 litres, and solar cookers. The unit pioneered research into passive solar energy for poultry brooding, producing pollution-free solar chicken brooders, and has also developed small solar incubators.'],[]),
+ ('Energy Management and Environment','energy-mgmt','gauge',
+  ['Energy use in homes, businesses and institutions involves considerable waste, while energy prices rise every year. For some Nigerian businesses, cutting the energy bill is an urgent priority to stay profitable, and better energy efficiency can reduce costs dramatically.',
+   'The unit works on energy efficiency and the management of energy resources, on assessing cost-effectiveness, and on making energy production and use environmentally friendly.'],
+  [('emissions-monitoring','Laboratory Emissions Monitoring System','PM, CO and CO₂ from domestic biomass cookstoves')]),
+ ('Wind and Meteorology','wind','wind',
+  ['The Centre built a one-year wind data bank (2005–2006) using a CR10X data logger, with wind measured at 9 metres above the ground. Because wind energy increases with height, the results show that a turbine at about 50 metres could support utility-scale wind energy, and that NCERD may have class 3 sites suitable for electricity generation.',
+   'A weather station at the Centre records wind speed, wind direction and other weather conditions. The unit\'s work focuses on expanding this database through continued data collection.'],
+  [('weather-station','Weather Station','Wind speed, wind direction and weather conditions')]),
+ ('Fossil Energy','fossil','mountain',
+  ['Fossil energy drives national economies, as coal and petroleum did in the industrial revolutions of Europe and America. Nigeria\'s proven reserves are sizeable: natural gas (4,497 MMTOE), petroleum (4,635 MMTOE) and coal (2.7 billion tonnes), with oil shale and bitumen. Research will shape how these fuels are used.',
+   'The Centre works on coal briquetting, and has shown it can turn Nigeria\'s friable, non-agglutinating coal into compact, smokeless solid fuel for homes.'],
+  [('briquetting-machine','Coal Briquetting Machine','0.5 tonnes per day capacity')]),
+ ('Energy Information and Manpower Development','information','book',
+  ['The EIMD unit was created to spread the Centre\'s research and build skills in renewable energy. It identifies skills gaps and runs workshops for Nigerians on solar PV, solar thermal, biomass and wind, and on energy efficiency and management.',
+   'The unit organised a two-batch AutoCAD course for NCERD staff, and intermediate courses on solar PV system design and installation for engineers and technologists in 2012, 2019 and 2021. Other training has included inverter fabrication. Its staff, drawn from different backgrounds, also carry out collaborative research in their base units.'],[]),
+ ('Research Library and Information','library','library',
+  ['Research depends on good collection, storage and retrieval of information. The Centre\'s special library offers lending, reference and other information services, with books, journals, conference and workshop proceedings, newsletters, periodicals and reference materials on renewable and alternative energy.',
+   'The library supports other departmental libraries of the University of Nigeria, Nsukka, with information, technical support and practical guidance during students\' industrial training and project research.'],[]),
+]
+
+unav=''.join(f'<a href="#u-{k}">{ic(i)}{n}</a>' for k,(n,a,i,_,_l) in enumerate(UNIT_DETAIL))
+ublocks=''
+for k,(n,a,i,paras,labs) in enumerate(UNIT_DETAIL):
+    uhead=next((u[3] for u in UNITS if u[0]==n),'')
+    hh=f'<div class="unit-head">{ic("users")}Unit head: {uhead}</div>' if uhead else ''
+    ph=''.join(lab_fig(*l) for l in labs)
+    side=f'<div class="ud-side">{ph}</div>' if ph else f'<div class="ud-side"><div class="ud-art" style="background-image:url(assets/images/units/{a}.svg)"></div></div>'
+    ublocks+=f'<article class="ud reveal" id="u-{k}"><div class="ud-main"><span class="ud-n">{k+1:02d}</span><h3>{n}</h3>{"".join(f"<p>{x}</p>" for x in paras)}{hh}</div>{side}</article>'
+research=phero('Research units and facilities','Eight research units and a set of laboratories for analysis, testing and fabrication in renewable and alternative energy.','Research',
+               photo='assets/images/building-front.webp',stats=[(8,'Research units'),(10,'Featured instruments')])
+research+=f"""
+<section aria-labelledby="mand" style="padding-top:80px">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">Our mandate</span>
+      <h2 id="mand">Research across renewable and non-renewable energy</h2>
+      <p class="lede">NCERD UNN was established to carry out research, development, dissemination, commercialisation and manpower training in renewable and non-renewable energy technologies.</p>
+      <p>Its work covers solar, biomass, biofuels, wind, hydro, geothermal, fossil fuels, energy management and environment. The Centre also mounts short courses, diploma and degree programmes in renewable energy technologies, in collaboration with academic departments of the University of Nigeria, Nsukka and other institutions.</p>
+    </div>
+    <blockquote class="mandate reveal-scale">{ic('quote')}<p>To place the Centre in the forefront of research and development, innovation in knowledge transfer in renewable and alternative energy technologies, energy management and environment.</p><cite>Mission of the Centre</cite></blockquote>
+  </div>
+</section>
+<section class="mist" aria-labelledby="ru">
+  <div class="wrap">
+    <div class="head-row"><div class="reveal"><span class="eyebrow">Research units</span><h2 id="ru">Eight research units</h2></div></div>
+    <nav class="unit-nav reveal" aria-label="Research units">{unav}</nav>
+    <div class="uds">{ublocks}</div>
+  </div>
+</section>
+<section id="facilities" aria-labelledby="fac2">
+  <div class="wrap">
+    <div class="head-row"><div class="reveal"><span class="eyebrow">Facilities at the Centre</span><h2 id="fac2">Research facilities</h2><p class="lede">Some of the research equipment at the Centre.</p></div></div>
+    <div class="labs-grid five" data-stagger>{''.join(lab_fig(*l) for l in LABS)}</div>
+    <div class="notebox">{ic('info')}<p>To use the Centre's laboratories for analysis or testing, <a href="contact-us.html">contact the Centre</a>.</p></div>
+  </div>
+</section>
+"""
+write('research.html','Research units and facilities'+SUFFIX,'The eight research units and laboratory facilities of the National Centre for Energy Research and Development, University of Nigeria, Nsukka.',research)
+
 P=[
  ('Performance evaluation of a 50 L batch transesterification reactor','bio','done',''),
  ('Synthesis, characterisation and comparative analysis of dye-sensitised solar cells using natural and synthetic dyes with TiO₂ films','pv','done',''),
@@ -526,13 +629,14 @@ def initials(name):
     return (ps[0][0]+ps[-1][0]).upper()
 def person(n,role,unit,i):
     return f'<article class="person"><div class="row"><div class="avatar" aria-hidden="true"><span>{initials(n)}</span></div><div><b>{n}</b><small>{role}</small></div></div><div class="unit">{ic(i)}{unit}</div></article>'
-heads=''.join(person(h,'Unit head',n,i) for n,i,_,h in UNITS)
+heads=''.join(person(h,'Unit head',n,i) for n,i,_,h,_a in UNITS if h)
 SUP=[('Mrs. H.A. Umeakuka','Administrative Secretary (Acting)','Administration','building'),('Mr. I.O. Imuoh','Unit head','Accounts','coins'),
      ('Mr. P.U. Nwafor','Unit head','Audit','clipboard'),('Mrs. U. Ogwo','Unit head','Library and ICT','library'),('Mr. M.C. Onyia','Unit head','Media','media'),
-     ('Mr. O.D. Osondu','Unit head','Business','briefcase'),('Barr. S.O. Abangwu','Unit head','Legal','scale'),('Mrs. G.K. Uka','Unit head','Personnel and Pension','users')]
+     ('Mr. O.D. Osondu','Unit head','Business','briefcase'),('Barr. S.O. Abangwu','Unit head','Legal','scale'),('Mrs. G.K. Uka','Unit head','Personnel and Pension','users'),
+     ('Mr. Ik Owoh','Unit head','Design and Production Workshops','wrench'),('Mr. A. Ofomatah','Unit head','Laboratories','flask')]
 sup=''.join(person(n,r,u,i) for n,r,u,i in SUP)
-staff=phero('Leadership and staff','Research fellows, engineers, technologists and administrators across nine research units and eight support units.','Staff',photo='assets/images/hero-solar.svg',
-            stats=[(9,'Research units'),(8,'Support units')])
+staff=phero('Leadership and staff','Research fellows, engineers, technologists and administrators across eight research units and ten support and technical units.','Staff',photo='assets/images/hero-solar.svg',
+            stats=[(8,'Research units'),(10,'Support and technical units')])
 staff+=f'''
 <section aria-labelledby="sup-title" style="padding-top:80px">
   <div class="wrap">
@@ -651,7 +755,7 @@ contact+=f'''
 <section style="padding-top:0">
   <div class="wrap">
     <div class="reach" data-stagger>
-      <div class="rcard"><div class="icon">{ic('phone')}</div><h2>Call</h2><a href="tel:+2348065702570">+234 806 570 2570</a><a href="tel:+2348082770823">+234 808 277 0823</a></div>
+      <div class="rcard"><div class="icon">{ic('phone')}</div><h2>Call</h2><a href="tel:+2348065702570">+234 806 570 2570</a><a href="tel:+2348082770823">+234 808 277 0823</a><a href="tel:+2348076251137">+234 807 625 1137</a></div>
       <div class="rcard"><div class="icon">{ic('mail')}</div><h2>Email</h2><a href="mailto:ncerdunn@yahoo.com">ncerdunn@yahoo.com</a><small>Conference and training: <a href="mailto:ncerdunn.conference@gmail.com">ncerdunn.conference@gmail.com</a></small></div>
       <div class="rcard"><div class="icon">{ic('pin')}</div><h2>Visit</h2><span class="v">University of Nigeria, Nsukka Campus</span><small>Nsukka, Enugu State, Nigeria</small></div>
     </div>

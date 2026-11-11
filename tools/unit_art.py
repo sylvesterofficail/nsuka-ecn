@@ -144,6 +144,15 @@ ART['labs'] = f'''
 </g>
 <circle cx="150" cy="150" r="8" fill="{M}"/><circle cx="170" cy="120" r="5" fill="{M}"/><circle cx="160" cy="95" r="3.5" fill="{M}"/>'''
 
+# 10 Research library: shelves of books and an open book
+ART['library'] = f'''
+<path d="M60 120 H330 M60 230 H330 M60 340 H330" stroke-width="3"/>
+<rect x="80" y="60" width="26" height="60" fill="{F}"/><rect x="112" y="70" width="22" height="50" fill="{F}"/><rect x="140" y="55" width="30" height="65" fill="{F}"/><path d="M180 120 L200 68 L222 74 L204 120" fill="{F}"/><rect x="235" y="65" width="24" height="55" fill="{F}"/><rect x="266" y="75" width="40" height="45" fill="{F}"/>
+<rect x="80" y="170" width="34" height="60" fill="{F}"/><rect x="120" y="180" width="22" height="50" fill="{F}"/><rect x="150" y="165" width="28" height="65" fill="{F}"/><rect x="186" y="175" width="26" height="55" fill="{F}"/><rect x="220" y="168" width="30" height="62" fill="{F}"/><rect x="258" y="182" width="48" height="48" fill="{F}"/>
+<rect x="84" y="282" width="30" height="58" fill="{F}"/><rect x="122" y="290" width="26" height="50" fill="{F}"/><rect x="156" y="278" width="34" height="62" fill="{F}"/><rect x="200" y="288" width="24" height="52" fill="{F}"/><rect x="232" y="280" width="30" height="60" fill="{F}"/>
+<g transform="translate(460 250)"><path d="M0 -10 C-40 -40 -90 -40 -120 -25 V90 C-90 75 -40 75 0 105 Z" fill="{F}"/><path d="M0 -10 C40 -40 90 -40 120 -25 V90 C90 75 40 75 0 105 Z" fill="{F}"/><path d="M0 -10 V105"/><path d="M-95 5 C-70 -5 -40 -2 -20 10 M-95 30 C-70 20 -40 23 -20 35 M20 10 C40 -2 70 -5 95 5 M20 35 C40 23 70 20 95 30" stroke-opacity=".7"/></g>
+<path d="M30 420 H570" stroke-opacity=".4"/>'''
+
 for k, v in ART.items():
     with open(os.path.join(OUT, f'{k}.svg'), 'w') as f:
         f.write(wrap(v))
